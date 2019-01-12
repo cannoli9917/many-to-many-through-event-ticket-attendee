@@ -1,5 +1,39 @@
 class Attendee
-end
+
+  attr_accessor :name, :age
+
+  @@all = []
+
+  def self.all
+    @@all
+  end
+
+  def initialize(name, age)
+    @name = name
+    @age = age
+
+    @@all << self
+  end
+
+  def tickets
+    Ticket.all.select do |tic|
+      tic.attendee == self
+    end
+  end
+
+  def events
+    tickets.map do |tic|
+      tic.event
+    end
+  end
+
+  def money_spent
+    events.reduce(0) do |sum, event|
+      sum + event.tic_cost
+    end
+  end
+
+end #end of Attendee class
 
 # Attendee.all
   # Returns an array of all Attendees
