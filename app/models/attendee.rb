@@ -33,6 +33,12 @@ class Attendee
     end
   end
 
+  def venues
+    events.map do |ev|
+      ev.venue
+    end
+  end
+
 end #end of Attendee class
 
 # Attendee.all

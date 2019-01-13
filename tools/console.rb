@@ -13,14 +13,20 @@ end
 lucy = Attendee.new("Lucy", 22)
 katie = Attendee.new("Katie", 30)
 kevin = Attendee.new("Kevin", 35)
+david = Attendee.new("David", 35)
 
-e1 = Event.new("event1", 10, 50)
-e2 = Event.new("event2", 10, 100)
+v1 = Venue.new("venue1", "here", 50)
+v2 = Venue.new("venue2", "there", 40)
+
+e1 = Event.new("event1", 10, 50, v1)
+e2 = Event.new("event2", 10, 100, v2)
 
 t1 = Ticket.new(katie, e1)
 t2 = Ticket.new(kevin, e1)
 t3 = Ticket.new(katie, e2)
 t4 = Ticket.new(lucy, e1)
+
+
 
 
 

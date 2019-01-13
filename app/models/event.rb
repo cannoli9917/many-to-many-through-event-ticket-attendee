@@ -1,6 +1,6 @@
 class Event
 
-  attr_accessor :name, :tic_cost, :event_cost
+  attr_accessor :name, :tic_cost, :event_cost, :venue
 
   @@all = []
 
@@ -9,10 +9,11 @@ class Event
   end
 
 
-  def initialize(name, tic_cost, event_cost)
+  def initialize(name, tic_cost, event_cost, venue)
     @name = name
     @tic_cost = tic_cost
     @event_cost = event_cost
+    @venue = venue
 
     @@all << self
   end
